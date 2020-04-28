@@ -11,9 +11,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>The Only Budgeting App</h3>
-        <h3>INSERT FILE HERE</h3>
+      <div className="block">
+        <h2 className="title">The Only Budgeting App</h2>
+        <h3 className="subtitle">INSERT FILE HERE</h3>
         <FileInput />
         {/* <input type="file"></input> */}
       </div>
