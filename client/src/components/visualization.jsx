@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Visualization extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Visualization extends React.Component {
   //use that on button click to call this.props.filterTransactionsAndUpdate(this.catagory, this.info)
 
   render() {
-    return <p></p>;
+    return <p>This is the Visualization page</p>;
   }
 }
 
