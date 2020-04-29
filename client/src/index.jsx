@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Papa from "papaparse";
-import axios from "axios";
-import FileInput from "./components/FileInput.jsx";
-import Visualization from "./components/Visualization.jsx";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Papa from 'papaparse';
+import axios from 'axios';
+import FileInput from './components/FileInput.jsx';
+import Visualization from './components/Visualization.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -25,10 +25,10 @@ class App extends React.Component {
       .then((fileToJson) => {
         //needs to send an axios request to the server(post) with
         //fileToJson.data
-        return axios.post("api/transactions", fileToJson.data);
+        return axios.post('api/transactions', fileToJson.data);
       })
       .then((resp) => {
-        return axios.get("api/transactions");
+        return axios.get('api/transactions');
       })
       .then((resp) => {
         this.setState(
@@ -38,13 +38,13 @@ class App extends React.Component {
           }
         );
       })
-      .catch((err) => console.log("Error in processing file: ", err));
+      .catch((err) => console.log('Error in processing file: ', err));
   }
 
   //create a filter function change state based on selected filter
   filterTransactionsAndUpdate(tableField, searchValue) {
     axios
-      .get("api/transactions/field", {
+      .get('api/transactions/field', {
         params: {
           tableField,
           searchValue,
@@ -77,4 +77,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById('app'));

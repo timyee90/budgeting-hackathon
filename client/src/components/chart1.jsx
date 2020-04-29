@@ -48,9 +48,9 @@ class Chart1 extends React.Component {
   setInfo(callback) {
     let info = {};
     this.props.transactions.forEach((transaction) => {
-      if (info[transaction.category]) {
+      if (info[transaction.category] && transaction.transaction !== 'credit') {
         info[transaction.category].total += transaction.amount;
-      } else if (transaction.category !== 'Paycheck') {
+      } else if (transaction.transaction !== 'credit') {
         info[transaction.category] = { total: transaction.amount };
       }
     });
