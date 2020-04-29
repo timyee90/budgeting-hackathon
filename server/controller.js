@@ -27,7 +27,7 @@ module.exports = {
 
   getTransactionsPerField: (req, res) => {
     models
-      .getTransactionsPerField(req.body)
+      .getTransactionsPerField(req.query)
       .then((result) => {
         res.json(result);
       })
