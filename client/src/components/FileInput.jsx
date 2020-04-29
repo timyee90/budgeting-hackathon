@@ -18,7 +18,7 @@ class FileInput extends React.Component {
         <p>
           By importing your spending for the past year,
           <br />
-          We'll help you categorize your transaction and identify areas for
+          We will help you categorize your transaction and identify areas for
           potential savings.
         </p>
         <form onSubmit={this.handleSubmit}>
