@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Scope+One|Trocchi");
+@import url('https://fonts.googleapis.com/css?family=Scope+One|Trocchi');
 
 /* Banner */
 
@@ -7,7 +7,7 @@
   padding: 4em 0 3em 0;
   display: flex;
   justify-content: center;
-  background-image: url("./assets/banner.jpg");
+  background-image: url('./assets/banner.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -44,7 +44,7 @@
 }
 
 #banner:before {
-  content: "";
+  content: '';
   display: block;
   background-color: #000;
   height: 100%;
@@ -139,3 +139,16 @@ button,
   white-space: nowrap;
   border-bottom: 1px solid #d0d0d0;
 }
+
+/* Nav bar */
+
+/* .nav {
+  width: 100%;
+  float: left;
+  margin: 0 0 3em 0;
+  padding: 0;
+  list-style: none;
+} */
+/* #nav li {
+  float: left;
+} */
