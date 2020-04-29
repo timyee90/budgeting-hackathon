@@ -1,7 +1,7 @@
 import React from 'react';
 import c3 from 'c3';
 //filter by transaction name
-class Chart1 extends React.Component {
+class Chart3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,10 +48,10 @@ class Chart1 extends React.Component {
   setInfo(callback) {
     let info = {};
     this.props.transactions.forEach((transaction) => {
-      if (info[transaction.category]) {
-        info[transaction.category].total += transaction.amount;
-      } else if (transaction.category !== 'Paycheck') {
-        info[transaction.category] = { total: transaction.amount };
+      if (info[transaction.transaction]) {
+        info[transaction.transaction].total += transaction.amount;
+      } else {
+        info[transaction.transaction] = { total: transaction.amount };
       }
     });
     console.log(info);
@@ -65,4 +65,4 @@ class Chart1 extends React.Component {
   }
 }
 
-export default Chart1;
+export default Chart3;
