@@ -10,12 +10,20 @@ class App extends React.Component {
     super();
     this.state = {
       transactions: [],
-      showChart: false,
+      showChart: true,
     };
     this.uploadAndUpdate = this.uploadAndUpdate.bind(this);
     this.filterTransactionsAndUpdate = this.filterTransactionsAndUpdate.bind(
       this
     );
+  }
+
+  componentDidMount() {
+    return axios.get('api/transactions').then((result) => {
+      this.setState({
+        transactions: result.data,
+      });
+    });
   }
   // handleClick -> send file to the server
   uploadAndUpdate(file) {
