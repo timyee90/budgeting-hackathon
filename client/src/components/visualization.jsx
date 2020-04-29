@@ -60,7 +60,6 @@ class Visualization extends React.Component {
           </div>
         </nav>
         {current}
->>>>>>> master
       </div>
     );
   }
