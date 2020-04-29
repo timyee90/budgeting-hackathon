@@ -1,5 +1,5 @@
-const db = require('./index.js');
-const util = require('util');
+const db = require("./index.js");
+const util = require("util");
 
 db.queryAsync = util.promisify(db.query);
 
@@ -29,7 +29,7 @@ module.exports = {
   },
 
   getTransactionsPerField: (data) => {
-    let values = [data.tableFieldsearchValue];
+    let values = [data.tableField, searchValue];
     return db.queryAsync(`SELECT * FROM cash_flow WHERE ? = ?;`, values);
   },
 };
