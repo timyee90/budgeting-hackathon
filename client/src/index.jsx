@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FileInput from './components/FileInput.jsx';
 import Papa from 'papaparse';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor() {
@@ -16,11 +17,15 @@ class App extends React.Component {
   asyncParse(file) {
     new Promise(function (complete, error) {
       Papa.parse(file, { complete, error, header: true });
-    }).then((fileToJson) => {
-      //needs to send an axios request to the server(post) with
-      //fileToJson.data
-      console.log(fileToJson.data);
-    });
+    })
+      .then((fileToJson) => {
+        //needs to send an axios request to the server(post) with
+        //fileToJson.data
+        return axios.post('api/transactions', fileToJson.data);
+      })
+      .then((resp) => {
+        console.log(resp);
+      });
   }
 
   render() {
