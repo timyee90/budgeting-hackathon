@@ -11,6 +11,7 @@ module.exports = {
         res.sendStatus(404);
       });
   },
+
   postTransactions: (req, res) => {
     console.log(req.body);
     models
@@ -20,6 +21,17 @@ module.exports = {
       })
       .catch((err) => {
         console.log(err);
+        res.sendStatus(404);
+      });
+  },
+
+  getTransactionsPerField: (req, res) => {
+    models
+      .getTransactionsPerField(req.query)
+      .then((result) => {
+        res.json(result);
+      })
+      .catch((err) => {
         res.sendStatus(404);
       });
   },
