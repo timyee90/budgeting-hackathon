@@ -9,7 +9,7 @@ class FileInput extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.asyncParse(this.fileInput.current.files[0]);
+    this.props.uploadAndUpdate(this.fileInput.current.files[0]);
   }
 
   render() {

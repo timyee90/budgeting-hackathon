@@ -1,14 +1,20 @@
 import React from "react";
 
-class Visaulization extends React.Component {
+class Visualization extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      catagory: null,
+      info: null,
+    };
   }
 
+  //create a form to change states of catagory and info
+  //use that on button click to call this.props.filterTransactionsAndUpdate(this.catagory, this.info)
+
   render() {
-    return <div>This is the Visaulization page</div>;
+    return <p>This is the Visualization page</p>;
   }
 }
 
-export default Visaulization;
+export default Visualization;
