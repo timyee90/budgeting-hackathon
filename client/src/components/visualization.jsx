@@ -1,4 +1,5 @@
 import React from "react";
+import TransactionList from "./TransactionList.jsx";
 
 class Visualization extends React.Component {
   constructor(props) {
@@ -13,7 +14,12 @@ class Visualization extends React.Component {
   //use that on button click to call this.props.filterTransactionsAndUpdate(this.catagory, this.info)
 
   render() {
-    return <p>This is the Visualization page</p>;
+    return (
+      <div>
+        <p>This is the Visualization page</p>
+        <TransactionList transactions={this.props.transactions} />
+      </div>
+    );
   }
 }
 
