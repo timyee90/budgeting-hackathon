@@ -7,6 +7,7 @@ module.exports = {
   getTransactions: () => {
     return db.queryAsync(`SELECT * FROM cash_flow;`);
   },
+
   postTransactions: (data) => {
     console.log("This is the data: ", data);
     let values = [
@@ -21,5 +22,10 @@ module.exports = {
       `INSERT INTO cash_flow (date, description, amount, transaction, category, account_name) VALUES (?, ?, ?, ?, ?, ?);`,
       values
     );
+  },
+
+  getTransactionsPerField: (data) => {
+    let values = [data.tableFieldsearchValue];
+    return db.queryAsync(`SELECT * FROM cash_flow WHERE ? = ?;`, values);
   },
 };
