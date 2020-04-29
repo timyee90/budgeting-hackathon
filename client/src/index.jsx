@@ -24,8 +24,14 @@ class App extends React.Component {
         return axios.post('api/transactions', fileToJson.data);
       })
       .then((resp) => {
-        console.log(resp);
-      });
+        return axios.get('api/transactions');
+      })
+      .then((resp) => {
+        this.setState({ transactions: resp.data }, () => {
+          console.log(this.state.transactions);
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   render() {

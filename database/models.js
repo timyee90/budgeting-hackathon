@@ -20,7 +20,6 @@ module.exports = {
         transactions.Account_Name || null,
       ];
     });
-    console.log(values);
     return db.queryAsync(
       `INSERT INTO cash_flow (date, description, amount, transaction, category, account_name) VALUES ?;`,
       [values]
