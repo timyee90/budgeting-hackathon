@@ -1,5 +1,4 @@
 import React from 'react';
-import Papa from 'papaparse';
 
 class FileInput extends React.Component {
   constructor(props) {
@@ -8,17 +7,9 @@ class FileInput extends React.Component {
     this.fileInput = React.createRef();
   }
 
-  asyncParse(file) {
-    return new Promise(function (complete, error) {
-      Papa.parse(file, { complete, error, header: true });
-    });
-  }
-
   handleSubmit(event) {
-    this.asyncParse(this.fileInput.current.files[0]).then((fileToJson) => {
-      console.log(fileToJson.data);
-    });
     event.preventDefault();
+    this.props.asyncParse(this.fileInput.current.files[0]);
   }
 
   render() {
