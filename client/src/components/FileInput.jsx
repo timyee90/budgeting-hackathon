@@ -1,5 +1,5 @@
 import React from 'react';
-import csvToJson from 'csvtojson';
+import Papa from 'papaparse';
 
 class FileInput extends React.Component {
   constructor(props) {
@@ -7,9 +7,18 @@ class FileInput extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.fileInput = React.createRef();
   }
+
+  asyncParse(file) {
+    return new Promise(function (complete, error) {
+      Papa.parse(file, { complete, error, header: true });
+    });
+  }
+
   handleSubmit(event) {
+    this.asyncParse(this.fileInput.current.files[0]).then((fileToJson) => {
+      console.log(fileToJson.data);
+    });
     event.preventDefault();
-    alert(`Selected file - ${this.fileInput.current.files[0].name}`);
   }
 
   render() {
