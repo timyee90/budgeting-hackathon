@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import FileInput from './components/FileInput.jsx';
 import Papa from 'papaparse';
 import axios from 'axios';
+import Visualization from './components/visualization.jsx';
 
 class App extends React.Component {
   constructor() {
@@ -10,11 +11,13 @@ class App extends React.Component {
     this.state = {
       transactions: [],
     };
-    this.asyncParse = this.asyncParse.bind(this);
+    this.uploadAndUpdate = this.uploadAndUpdate.bind(this);
+    this.filterTransactionsAndUpdate = this.filterTransactionsAndUpdate.bind(
+      this
+    );
   }
   // handleClick -> send file to the server
-
-  asyncParse(file) {
+  uploadAndUpdate(file) {
     new Promise(function (complete, error) {
       Papa.parse(file, { complete, error, header: true });
     })
@@ -34,12 +37,28 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   }
 
+  //create a filter function change state based on selected filter
+  filterTransactionsAndUpdate(tableField, searchValue) {
+    axios
+      .get('api/transactions/field', {
+        params: {
+          tableField,
+          searchValue,
+        },
+      })
+      .then((resp) => console.log(resp.data));
+  }
+
   render() {
     return (
       <div>
         <h3>The Only Budgeting App</h3>
         <h3>INSERT FILE HERE</h3>
-        <FileInput asyncParse={this.asyncParse} />
+        <FileInput uploadAndUpdate={this.uploadAndUpdate} />
+        <Visualization
+          transactions={this.state.transactions}
+          filterTransactionsAndUpdate={this.filterTransactionsAndUpdate}
+        />
       </div>
     );
   }
