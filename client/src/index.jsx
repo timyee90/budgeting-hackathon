@@ -39,12 +39,10 @@ class App extends React.Component {
         return axios.get("api/transactions");
       })
       .then((resp) => {
-        this.setState(
-          { transactions: resp.data, showChart: !this.state.showChart },
-          () => {
-            console.log(this.state.transactions);
-          }
-        );
+        this.setState({
+          transactions: resp.data,
+          showChart: !this.state.showChart,
+        });
       })
       .catch((err) => console.log("Error in processing file: ", err));
   }
