@@ -8,7 +8,7 @@ class CategoryItem extends React.Component {
     return (
       <div className="txn-row">
         <div className="txn-data">{this.props.transaction.key}</div>
-        <div className="txn-data">{this.props.transaction.value}</div>
+        <div className="txn-data">${this.props.transaction.value}</div>
       </div>
     );
   }
