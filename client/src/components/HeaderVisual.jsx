@@ -1,9 +1,8 @@
-import React from "react";
+import React from 'react';
 
 class HeaderVisual extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
@@ -14,7 +13,7 @@ class HeaderVisual extends React.Component {
       percentage = 0,
       message;
     this.props.transactions.forEach((item) => {
-      if (item.transaction === "debit") {
+      if (item.transaction === 'debit') {
         amountDebit += item.amount;
       } else {
         amountCredit += item.amount;
@@ -46,7 +45,7 @@ class HeaderVisual extends React.Component {
           <header>
             <h1>Based on the documentation you provided,</h1>
             <h1>
-              Your average monthly expenses are{" "}
+              Your average monthly expenses are{' '}
               <strong>${averageExpense}</strong> while your average monthly
               income is <strong>${averageIncome}</strong>.
             </h1>

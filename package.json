@@ -8,7 +8,11 @@
     "build-dev": "webpack -d --watch --mode development",
     "server-dev": "nodemon server/index.js"
   },
-  "author": "",
+  "author": "Tim Yee <timyee90@gmail.com>",
+  "contributors": [
+    "Oliver Comia <oliver.r.comia@gmail.com>",
+    "Maxwell Katz <maxkatz23@gmail.com>"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -24,7 +28,6 @@
     "body-parser": "^1.19.0",
     "bulma": "^0.8.2",
     "c3": "^0.7.15",
-    "csvtojson": "^2.0.10",
     "d3": "^5.16.0",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
