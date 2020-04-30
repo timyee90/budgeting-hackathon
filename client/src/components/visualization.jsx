@@ -1,8 +1,11 @@
 import React from 'react';
 import TransactionList from './TransactionList.jsx';
+import CategoryList from './CategoryList.jsx';
+import HeaderVisual from './HeaderVisual.jsx';
 import Chart1 from './chart1.jsx';
 import Chart2 from './chart2.jsx';
 import Chart3 from './chart3.jsx';
+import IncomeExpense from './IncomeExpense.jsx';
 class Visualization extends React.Component {
   constructor(props) {
     super(props);
@@ -22,49 +25,53 @@ class Visualization extends React.Component {
   }
 
   render() {
-    {
-      /* <Chart2 transactions={this.props.transactions} /> */
-    }
-    {
-      /* <Chart3 transactions={this.props.transactions} /> */
-    }
+    let chart;
     let current;
     if (this.state.navigation === 'all') {
       current = <TransactionList transactions={this.props.transactions} />;
+      chart = <div></div>;
     } else if (this.state.navigation === 'cat') {
-      current = <div>Category</div>;
-    } else if (this.state.navigation === 'type') {
-      current = <div>Transaction Type</div>;
+      current = <CategoryList transactions={this.props.transactions} />;
+      chart = <Chart1 transactions={this.props.transactions} />;
+    } else if (this.state.navigation === 'inc') {
+      current = <IncomeExpense transactions={this.props.transactions} />;
+      chart = <Chart3 transactions={this.props.transactions} />;
     }
     return (
       <div>
         <div className="container level">
-          <div className="title">This is the Visualization page</div>
+          <HeaderVisual transactions={this.props.transactions} />
         </div>
-        <nav className="navbar level-left">
+        <nav id="nav" className="navbar">
           <div className="">
-            <button className="button" name="all" onClick={this.handleNavClick}>
+            <button
+              className="button nav"
+              name="all"
+              onClick={this.handleNavClick}
+            >
               All Transactions
             </button>
           </div>
           <div className="">
-            <button className="button" name="cat" onClick={this.handleNavClick}>
+            <button
+              className="button nav"
+              name="cat"
+              onClick={this.handleNavClick}
+            >
               Category
             </button>
           </div>
           <div className="">
             <button
-              className="button"
-              name="type"
+              className="button nav"
+              name="inc"
               onClick={this.handleNavClick}
             >
-              Transaction Type
+              Income/Expenses
             </button>
           </div>
         </nav>
-        <div className="chartWrapper">
-          <Chart1 transactions={this.props.transactions} />
-        </div>
+        {chart}
         {current}
       </div>
     );
