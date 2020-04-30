@@ -11,7 +11,6 @@ Simply put in a spreadsheet and hit submit. Please ensure the .csv file contains
 5. Category
 6. Account_Name
 
----
 
 ## Getting Started
 
@@ -27,7 +26,6 @@ npm run server-dev
 
 In your web browser - type into the address bar: localhost:4000
 
----
 
 ## Credits
 
