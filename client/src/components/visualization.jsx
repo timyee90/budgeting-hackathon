@@ -1,16 +1,16 @@
-import React from "react";
-import TransactionList from "./TransactionList.jsx";
-import CategoryList from "./CategoryList.jsx";
-import HeaderVisual from "./HeaderVisual.jsx";
-import Chart1 from "./chart1.jsx";
-import Chart2 from "./chart2.jsx";
-import Chart3 from "./chart3.jsx";
-import IncomeExpense from "./IncomeExpense.jsx";
+import React from 'react';
+import TransactionList from './TransactionList.jsx';
+import CategoryList from './CategoryList.jsx';
+import HeaderVisual from './HeaderVisual.jsx';
+import Chart1 from './chart1.jsx';
+import Chart2 from './chart2.jsx';
+import Chart3 from './chart3.jsx';
+import IncomeExpense from './IncomeExpense.jsx';
 class Visualization extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      navigation: "all",
+      navigation: 'all',
     };
     this.handleNavClick = this.handleNavClick.bind(this);
   }
@@ -24,24 +24,18 @@ class Visualization extends React.Component {
     });
   }
 
-  // {/* <Chart1 transactions={this.props.transactions} /> */}
-  // {/* <Chart2 transactions={this.props.transactions} /> */}
-  // {/* <Chart3 transactions={this.props.transactions} /> */}
-
   render() {
     let chart;
     let current;
-    if (this.state.navigation === "all") {
+    if (this.state.navigation === 'all') {
       current = <TransactionList transactions={this.props.transactions} />;
       chart = <div></div>;
-    } else if (this.state.navigation === "cat") {
+    } else if (this.state.navigation === 'cat') {
       current = <CategoryList transactions={this.props.transactions} />;
       chart = <Chart1 transactions={this.props.transactions} />;
-    } else if (this.state.navigation === "type") {
-      current = <div>Transaction Type</div>;
-      chart = <Chart3 transactions={this.props.transactions} />;
-    } else if (this.state.navigation === "inc") {
+    } else if (this.state.navigation === 'inc') {
       current = <IncomeExpense transactions={this.props.transactions} />;
+      chart = <Chart3 transactions={this.props.transactions} />;
     }
     return (
       <div>
@@ -74,15 +68,6 @@ class Visualization extends React.Component {
               onClick={this.handleNavClick}
             >
               Income/Expenses
-            </button>
-          </div>
-          <div className="">
-            <button
-              className="button nav"
-              name="type"
-              onClick={this.handleNavClick}
-            >
-              Transaction Type
             </button>
           </div>
         </nav>
