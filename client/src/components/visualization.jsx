@@ -70,18 +70,6 @@ class Visualization extends React.Component {
               Income/Expenses
             </button>
           </div>
-<<<<<<< HEAD
-=======
-          <div className="">
-            <button
-              className="button nav"
-              name="type"
-              onClick={this.handleNavClick}
-            >
-              Transaction Type
-            </button>
-          </div>
->>>>>>> 4383858af52a9416d64b641fcdd1aedf238bf16f
         </nav>
         {chart}
         {current}
