@@ -21,6 +21,8 @@ class FileInput extends React.Component {
           We will help you categorize your transaction and identify areas for
           potential savings.
         </p>
+        <br />
+        <br />
         <form onSubmit={this.handleSubmit}>
           <input type="file" className="form" ref={this.fileInput} />
           <br />

@@ -1,7 +1,7 @@
 import React from 'react';
 import TransactionList from './TransactionList.jsx';
 import CategoryList from './CategoryList.jsx';
-
+import HeaderVisual from './HeaderVisual.jsx';
 import Chart1 from './chart1.jsx';
 import Chart2 from './chart2.jsx';
 import Chart3 from './chart3.jsx';
@@ -40,7 +40,7 @@ class Visualization extends React.Component {
     return (
       <div>
         <div className="container level">
-          <div className="title">Reports</div>
+          <HeaderVisual transactions={this.props.transactions} />
         </div>
         <nav className="navbar level-left">
           <div className="">
