@@ -33,11 +33,9 @@ class Visualization extends React.Component {
     } else if (this.state.navigation === 'cat') {
       current = <CategoryList transactions={this.props.transactions} />;
       chart = <Chart1 transactions={this.props.transactions} />;
-    } else if (this.state.navigation === 'type') {
-      current = <div>Transaction Type</div>;
-      chart = <Chart3 transactions={this.props.transactions} />;
     } else if (this.state.navigation === 'inc') {
       current = <IncomeExpense transactions={this.props.transactions} />;
+      chart = <Chart3 transactions={this.props.transactions} />;
     }
     return (
       <div>
@@ -58,15 +56,6 @@ class Visualization extends React.Component {
           <div className="">
             <button className="button" name="inc" onClick={this.handleNavClick}>
               Income/Expenses
-            </button>
-          </div>
-          <div className="">
-            <button
-              className="button"
-              name="type"
-              onClick={this.handleNavClick}
-            >
-              Transaction Type
             </button>
           </div>
         </nav>
