@@ -1,9 +1,11 @@
 import React from "react";
 import TransactionList from "./TransactionList.jsx";
+import CategoryList from "./CategoryList.jsx";
 import HeaderVisual from "./HeaderVisual.jsx";
 import Chart1 from "./chart1.jsx";
 import Chart2 from "./chart2.jsx";
 import Chart3 from "./chart3.jsx";
+import IncomeExpense from "./IncomeExpense.jsx";
 class Visualization extends React.Component {
   constructor(props) {
     super(props);
@@ -27,13 +29,19 @@ class Visualization extends React.Component {
   // {/* <Chart3 transactions={this.props.transactions} /> */}
 
   render() {
+    let chart;
     let current;
     if (this.state.navigation === "all") {
       current = <TransactionList transactions={this.props.transactions} />;
+      chart = <div></div>;
     } else if (this.state.navigation === "cat") {
-      current = <div>Category</div>;
+      current = <CategoryList transactions={this.props.transactions} />;
+      chart = <Chart1 transactions={this.props.transactions} />;
     } else if (this.state.navigation === "type") {
       current = <div>Transaction Type</div>;
+      chart = <Chart3 transactions={this.props.transactions} />;
+    } else if (this.state.navigation === "inc") {
+      current = <IncomeExpense transactions={this.props.transactions} />;
     }
     return (
       <div>
@@ -52,6 +60,11 @@ class Visualization extends React.Component {
             </button>
           </div>
           <div className="">
+            <button className="button" name="inc" onClick={this.handleNavClick}>
+              Income/Expenses
+            </button>
+          </div>
+          <div className="">
             <button
               className="button"
               name="type"
@@ -61,6 +74,7 @@ class Visualization extends React.Component {
             </button>
           </div>
         </nav>
+        {chart}
         {current}
       </div>
     );

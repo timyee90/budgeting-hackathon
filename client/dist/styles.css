@@ -79,7 +79,7 @@
 
 .txn {
   width: 80%;
-  margin: 20px;
+  margin: 20px 120px;
 }
 
 .category {
@@ -144,7 +144,7 @@
   display: flex;
   justify-content: center;
   border-top: 0;
-  height: 150px;
+  height: 160px;
   position: relative;
   text-align: center;
   overflow: hidden;
