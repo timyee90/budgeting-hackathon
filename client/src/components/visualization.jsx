@@ -63,7 +63,7 @@ class Visualization extends React.Component {
           </div>
         </nav>
         <div className="chartWrapper">
-          <Chart3 transactions={this.props.transactions} />
+          <Chart1 transactions={this.props.transactions} />
         </div>
         {current}
       </div>

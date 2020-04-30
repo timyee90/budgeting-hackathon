@@ -9,8 +9,17 @@ class Chart1 extends React.Component {
     };
 
     this.setInfo = this.setInfo.bind(this);
+    this.sortTransactions.bind(this);
   }
 
+  sortTransactions() {
+    return Object.keys(this.state.info).map((key) => {
+      return {
+        amount: Number(this.state.info[key].total.toFixed(2)),
+        name: key,
+      };
+    });
+  }
   //create a form to change states of catagory and info
   //use that on button click to call this.props.filterTransactionsAndUpdate(this.catagory, this.info)
 
@@ -22,9 +31,11 @@ class Chart1 extends React.Component {
           columns: [
             [
               'Spending Totals',
-              ...Object.keys(this.state.info).map((key) => {
-                return this.state.info[key].total.toFixed(2);
-              }),
+              ...this.sortTransactions()
+                .sort((a, b) => b.amount - a.amount)
+                .map((ele) => {
+                  return ele.amount;
+                }),
             ],
           ],
           type: 'bar',
@@ -35,9 +46,11 @@ class Chart1 extends React.Component {
         axis: {
           x: {
             type: 'categories',
-            categories: Object.keys(this.state.info).map((key) => {
-              return key;
-            }),
+            categories: this.sortTransactions()
+              .sort((a, b) => b.amount - a.amount)
+              .map((ele) => {
+                return ele.name;
+              }),
             tick: {
               rotate: 75,
               multiline: false,
