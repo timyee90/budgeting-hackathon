@@ -1,10 +1,9 @@
-import React from "react";
-import TransactionItem from "./TransactionItem.jsx";
+import React from 'react';
+import TransactionItem from './TransactionItem.jsx';
 
 class TransactionList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {

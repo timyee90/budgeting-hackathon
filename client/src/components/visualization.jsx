@@ -3,7 +3,6 @@ import TransactionList from './TransactionList.jsx';
 import CategoryList from './CategoryList.jsx';
 import HeaderVisual from './HeaderVisual.jsx';
 import Chart1 from './chart1.jsx';
-import Chart2 from './chart2.jsx';
 import Chart3 from './chart3.jsx';
 import IncomeExpense from './IncomeExpense.jsx';
 class Visualization extends React.Component {
@@ -14,9 +13,6 @@ class Visualization extends React.Component {
     };
     this.handleNavClick = this.handleNavClick.bind(this);
   }
-
-  //create a form to change states of catagory and info
-  //use that on button click to call this.props.filterTransactionsAndUpdate(this.catagory, this.info)
 
   handleNavClick(event) {
     this.setState({

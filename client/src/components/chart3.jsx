@@ -1,18 +1,13 @@
 import React from 'react';
 import c3 from 'c3';
-//filter by transaction name
 class Chart3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       info: {},
     };
-
     this.setInfo = this.setInfo.bind(this);
   }
-
-  //create a form to change states of catagory and info
-  //use that on button click to call this.props.filterTransactionsAndUpdate(this.catagory, this.info)
 
   componentDidMount() {
     this.setInfo(() => {

@@ -18,7 +18,3 @@ CREATE TABLE `cash_flow` (
   PRIMARY KEY (`id`)
 );
 
--- INSERT INTO cash_flow (date, description, amount, transaction, category, account_name) 
--- VALUES ("01/01/2019"	,"Skyba"	, 49.5640	,"debit"	,"Gym"	,"Credit Card 1");
--- INSERT INTO cash_flow (date, description, amount, transaction, category, account_name) 
--- VALUES ("01/01/2019"	,"Buzzshare"	,1150	,"debit"	,"Mortgage & Rent"	,"Banking Account");

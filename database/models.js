@@ -9,8 +9,6 @@ module.exports = {
   },
 
   postTransactions: (data) => {
-    // console.log('This is the data: ', data);
-
     let values = data.map((transactions) => {
       return [
         transactions.Date,
