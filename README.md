@@ -1,6 +1,5 @@
 # 2cents Budgeting Application
 
----
 
 Simply put in a spreadsheet and hit submit. Please ensure the .csv file contains the following columns:
 
@@ -14,7 +13,6 @@ Simply put in a spreadsheet and hit submit. Please ensure the .csv file contains
 
 ## Getting Started
 
----
 
 Run the following commands in your terminal:
 
@@ -29,6 +27,5 @@ In your web browser - type into the address bar: localhost:4000
 
 ## Credits
 
----
 
 Oliver Comia, Maxwell Katz, Tim Yee
