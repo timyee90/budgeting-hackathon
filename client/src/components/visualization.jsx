@@ -39,7 +39,9 @@ class Visualization extends React.Component {
     }
     return (
       <div>
+        <h2 className="reports">Here's our 2cents</h2>
         <div className="container level">
+          {' '}
           <HeaderVisual transactions={this.props.transactions} />
         </div>
         <nav id="nav" className="navbar">
@@ -71,7 +73,7 @@ class Visualization extends React.Component {
             </button>
           </div>
         </nav>
-        {chart}
+        <div className="txn">{chart}</div>
         {current}
       </div>
     );
