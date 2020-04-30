@@ -42,22 +42,46 @@ class Visualization extends React.Component {
         <div className="container level">
           <HeaderVisual transactions={this.props.transactions} />
         </div>
-        <nav className="navbar level-left">
+        <nav id="nav" className="navbar">
           <div className="">
-            <button className="button" name="all" onClick={this.handleNavClick}>
+            <button
+              className="button nav"
+              name="all"
+              onClick={this.handleNavClick}
+            >
               All Transactions
             </button>
           </div>
           <div className="">
-            <button className="button" name="cat" onClick={this.handleNavClick}>
+            <button
+              className="button nav"
+              name="cat"
+              onClick={this.handleNavClick}
+            >
               Category
             </button>
           </div>
           <div className="">
-            <button className="button" name="inc" onClick={this.handleNavClick}>
+            <button
+              className="button nav"
+              name="inc"
+              onClick={this.handleNavClick}
+            >
               Income/Expenses
             </button>
           </div>
+<<<<<<< HEAD
+=======
+          <div className="">
+            <button
+              className="button nav"
+              name="type"
+              onClick={this.handleNavClick}
+            >
+              Transaction Type
+            </button>
+          </div>
+>>>>>>> 4383858af52a9416d64b641fcdd1aedf238bf16f
         </nav>
         {chart}
         {current}
