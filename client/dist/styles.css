@@ -140,6 +140,13 @@ button,
   border-bottom: 1px solid #d0d0d0;
 }
 
+.chartWrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
 /* Nav bar */
 
 /* .nav {

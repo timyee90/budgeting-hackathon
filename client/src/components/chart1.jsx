@@ -28,6 +28,9 @@ class Chart1 extends React.Component {
             ],
           ],
           type: 'bar',
+          colors: {
+            'Spending Totals': '#00eae4',
+          },
         },
         axis: {
           x: {
@@ -39,6 +42,18 @@ class Chart1 extends React.Component {
               rotate: 75,
               multiline: false,
             },
+          },
+          y: {
+            tick: {
+              format: function (d) {
+                return '$' + d;
+              },
+            },
+          },
+        },
+        bar: {
+          width: {
+            ratio: 0.5,
           },
         },
       });
@@ -54,7 +69,7 @@ class Chart1 extends React.Component {
         info[transaction.category] = { total: transaction.amount };
       }
     });
-    console.log(info);
+
     this.setState({ info }, () => {
       callback();
     });

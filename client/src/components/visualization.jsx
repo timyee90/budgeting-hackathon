@@ -22,9 +22,12 @@ class Visualization extends React.Component {
   }
 
   render() {
-{/* <Chart1 transactions={this.props.transactions} /> */}
-{/* <Chart2 transactions={this.props.transactions} /> */}
-{/* <Chart3 transactions={this.props.transactions} /> */}
+    {
+      /* <Chart2 transactions={this.props.transactions} /> */
+    }
+    {
+      /* <Chart3 transactions={this.props.transactions} /> */
+    }
     let current;
     if (this.state.navigation === 'all') {
       current = <TransactionList transactions={this.props.transactions} />;
@@ -59,6 +62,9 @@ class Visualization extends React.Component {
             </button>
           </div>
         </nav>
+        <div className="chartWrapper">
+          <Chart3 transactions={this.props.transactions} />
+        </div>
         {current}
       </div>
     );
