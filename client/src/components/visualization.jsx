@@ -1,5 +1,6 @@
 import React from 'react';
 import TransactionList from './TransactionList.jsx';
+import CategoryList from './CategoryList.jsx';
 
 class Visualization extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Visualization extends React.Component {
     if (this.state.navigation === 'all') {
       current = <TransactionList transactions={this.props.transactions} />;
     } else if (this.state.navigation === 'cat') {
-      current = <div>Category</div>;
+      current = <CategoryList transactions={this.props.transactions} />;
     } else if (this.state.navigation === 'type') {
       current = <div>Transaction Type</div>;
     }
