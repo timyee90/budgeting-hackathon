@@ -45,6 +45,8 @@ mysql -u root -p < database/schema.sql
 localhost:4000
 ```
 
+6. Upload a .csv file and hit submit - [Sample data](https://drive.google.com/file/d/1OMTscE6UGMaEdEwEAnLkxuZ3VU-DbJbx/view?usp=sharing)
+
 ## Credits
 
 
